@@ -1,0 +1,780 @@
+From 65edeeb5762545e00380bc07e97f4bfa00b70eca Mon Sep 17 00:00:00 2001
+From: =?utf-8?q?Marc-Andr=C3=A9=20Lureau?= <marcandre.lureau@gmail.com>
+Date: Fri, 5 Jun 2009 00:16:09 +0300
+Subject: [PATCH] debian: include only gee.h
+
+perl -p -i -e 's/gee\/[^\.]*/gee/g' `find . -name '*.[ch]'`
+
+Recent vala do not generate a file per class
+---
+ src/plugins/dvb/rygel-dvb-channel-group.c          |   10 +++++-----
+ src/plugins/dvb/rygel-dvb-channel.c                |    2 +-
+ src/plugins/dvb/rygel-dvb-root-container.c         |   10 +++++-----
+ src/plugins/external/rygel-external-container.c    |   10 +++++-----
+ src/plugins/external/rygel-external-item.c         |    2 +-
+ src/plugins/folder/rygel-folder-container.c        |   10 +++++-----
+ .../folder/rygel-folder-directory-search-result.c  |    6 +++---
+ src/plugins/folder/rygel-folder-root-container.c   |   10 +++++-----
+ .../mediathek/rygel-mediathek-asx-playlist.c       |    4 ++--
+ .../mediathek/rygel-mediathek-root-container.c     |   10 +++++-----
+ .../mediathek/rygel-mediathek-rss-container.c      |   10 +++++-----
+ src/plugins/mediathek/rygel-mediathek-video-item.c |    8 ++++----
+ src/plugins/test/rygel-test-root-container.c       |   10 +++++-----
+ src/plugins/tracker/rygel-tracker-category.c       |    6 +++---
+ src/plugins/tracker/rygel-tracker-image-item.c     |    2 +-
+ src/plugins/tracker/rygel-tracker-music-item.c     |    2 +-
+ src/plugins/tracker/rygel-tracker-root-container.c |   10 +++++-----
+ src/plugins/tracker/rygel-tracker-search-result.c  |    4 ++--
+ src/plugins/tracker/rygel-tracker-video-item.c     |    2 +-
+ src/rygel/rygel-browse.c                           |    4 ++--
+ src/rygel/rygel-configuration.c                    |    8 ++++----
+ src/rygel/rygel-content-directory.c                |   10 +++++-----
+ src/rygel/rygel-didl-lite-writer.c                 |   10 +++++-----
+ src/rygel/rygel-http-request.c                     |    6 +++---
+ src/rygel/rygel-http-server.c                      |   10 +++++-----
+ src/rygel/rygel-main.c                             |    8 ++++----
+ src/rygel/rygel-media-container.c                  |    2 +-
+ src/rygel/rygel-media-item.c                       |    2 +-
+ src/rygel/rygel-media-server-factory.c             |    8 ++++----
+ src/rygel/rygel-media-server.c                     |    8 ++++----
+ src/rygel/rygel-plugin-loader.c                    |    8 ++++----
+ src/rygel/rygel-plugin.c                           |    4 ++--
+ src/rygel/rygel-transcode-manager.c                |    8 ++++----
+ src/rygel/rygel-transcoder.c                       |    4 ++--
+ src/rygel/rygel.h                                  |    6 +++---
+ src/ui/rygel-folder-pref-section.c                 |    8 ++++----
+ src/ui/rygel-preferences-dialog.c                  |    8 ++++----
+ 37 files changed, 125 insertions(+), 125 deletions(-)
+
+diff --git a/src/plugins/dvb/rygel-dvb-channel-group.c b/src/plugins/dvb/rygel-dvb-channel-group.c
+index 37ed3e2..92c2cdc 100644
+--- a/src/plugins/dvb/rygel-dvb-channel-group.c
++++ b/src/plugins/dvb/rygel-dvb-channel-group.c
+@@ -25,16 +25,16 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ #include <dbus/dbus-glib.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_DVB_CHANNEL_GROUP (rygel_dvb_channel_group_get_type ())
+diff --git a/src/plugins/dvb/rygel-dvb-channel.c b/src/plugins/dvb/rygel-dvb-channel.c
+index f754561..f412b65 100644
+--- a/src/plugins/dvb/rygel-dvb-channel.c
++++ b/src/plugins/dvb/rygel-dvb-channel.c
+@@ -29,7 +29,7 @@
+ #include <string.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ #include <dbus/dbus-glib.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_DVB_CHANNEL (rygel_dvb_channel_get_type ())
+diff --git a/src/plugins/dvb/rygel-dvb-root-container.c b/src/plugins/dvb/rygel-dvb-root-container.c
+index 8e4103b..1a0b0a0 100644
+--- a/src/plugins/dvb/rygel-dvb-root-container.c
++++ b/src/plugins/dvb/rygel-dvb-root-container.c
+@@ -27,14 +27,14 @@
+ #include <rygel.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ #include <dbus/dbus-glib.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/collection.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_DVB_ROOT_CONTAINER (rygel_dvb_root_container_get_type ())
+diff --git a/src/plugins/external/rygel-external-container.c b/src/plugins/external/rygel-external-container.c
+index 101fc13..4be37ef 100644
+--- a/src/plugins/external/rygel-external-container.c
++++ b/src/plugins/external/rygel-external-container.c
+@@ -29,12 +29,12 @@
+ #include <dbus/dbus-glib.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_EXTERNAL_CONTAINER (rygel_external_container_get_type ())
+diff --git a/src/plugins/external/rygel-external-item.c b/src/plugins/external/rygel-external-item.c
+index 319e33f..9571785 100644
+--- a/src/plugins/external/rygel-external-item.c
++++ b/src/plugins/external/rygel-external-item.c
+@@ -29,7 +29,7 @@
+ #include <dbus/dbus-glib.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_EXTERNAL_ITEM (rygel_external_item_get_type ())
+diff --git a/src/plugins/folder/rygel-folder-container.c b/src/plugins/folder/rygel-folder-container.c
+index 88368c7..5d36f1a 100644
+--- a/src/plugins/folder/rygel-folder-container.c
++++ b/src/plugins/folder/rygel-folder-container.c
+@@ -21,12 +21,12 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/list.h>
+-#include <gee/collection.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+diff --git a/src/plugins/folder/rygel-folder-directory-search-result.c b/src/plugins/folder/rygel-folder-directory-search-result.c
+index e580934..c3bb776 100644
+--- a/src/plugins/folder/rygel-folder-directory-search-result.c
++++ b/src/plugins/folder/rygel-folder-directory-search-result.c
+@@ -22,9 +22,9 @@
+ #include <glib-object.h>
+ #include <rygel.h>
+ #include <gio/gio.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+diff --git a/src/plugins/folder/rygel-folder-root-container.c b/src/plugins/folder/rygel-folder-root-container.c
+index 9ae29c5..f2cdeb5 100644
+--- a/src/plugins/folder/rygel-folder-root-container.c
++++ b/src/plugins/folder/rygel-folder-root-container.c
+@@ -21,14 +21,14 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gio/gio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_FOLDER_ROOT_CONTAINER (rygel_folder_root_container_get_type ())
+diff --git a/src/plugins/mediathek/rygel-mediathek-asx-playlist.c b/src/plugins/mediathek/rygel-mediathek-asx-playlist.c
+index 017bd74..e50a360 100644
+--- a/src/plugins/mediathek/rygel-mediathek-asx-playlist.c
++++ b/src/plugins/mediathek/rygel-mediathek-asx-playlist.c
+@@ -22,14 +22,14 @@
+ 
+ #include <glib.h>
+ #include <glib-object.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <libsoup/soup.h>
+ #include <libxml/parser.h>
+ #include <libxml/tree.h>
+ #include <libxml/xpath.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIATHEK_ASX_PLAYLIST (rygel_mediathek_asx_playlist_get_type ())
+diff --git a/src/plugins/mediathek/rygel-mediathek-root-container.c b/src/plugins/mediathek/rygel-mediathek-root-container.c
+index ffc9132..c5e5bd2 100644
+--- a/src/plugins/mediathek/rygel-mediathek-root-container.c
++++ b/src/plugins/mediathek/rygel-mediathek-root-container.c
+@@ -24,14 +24,14 @@
+ #include <glib-object.h>
+ #include <rygel.h>
+ #include <libsoup/soup.h>
+-#include <gee/arraylist.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gio/gio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIATHEK_ROOT_CONTAINER (rygel_mediathek_root_container_get_type ())
+diff --git a/src/plugins/mediathek/rygel-mediathek-rss-container.c b/src/plugins/mediathek/rygel-mediathek-rss-container.c
+index de21275..ab45573 100644
+--- a/src/plugins/mediathek/rygel-mediathek-rss-container.c
++++ b/src/plugins/mediathek/rygel-mediathek-rss-container.c
+@@ -23,18 +23,18 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libsoup/soup.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <libxml/parser.h>
+ #include <libxml/tree.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ #include <libxml/xpath.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIATHEK_RSS_CONTAINER (rygel_mediathek_rss_container_get_type ())
+diff --git a/src/plugins/mediathek/rygel-mediathek-video-item.c b/src/plugins/mediathek/rygel-mediathek-video-item.c
+index 2797b97..e027445 100644
+--- a/src/plugins/mediathek/rygel-mediathek-video-item.c
++++ b/src/plugins/mediathek/rygel-mediathek-video-item.c
+@@ -26,10 +26,10 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <libxml/tree.h>
+-#include <gee/arraylist.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIATHEK_VIDEO_ITEM (rygel_mediathek_video_item_get_type ())
+diff --git a/src/plugins/test/rygel-test-root-container.c b/src/plugins/test/rygel-test-root-container.c
+index cd0c5df..d97628f 100644
+--- a/src/plugins/test/rygel-test-root-container.c
++++ b/src/plugins/test/rygel-test-root-container.c
+@@ -25,14 +25,14 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TEST_ROOT_CONTAINER (rygel_test_root_container_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-category.c b/src/plugins/tracker/rygel-tracker-category.c
+index 8d4b0f4..9915b40 100644
+--- a/src/plugins/tracker/rygel-tracker-category.c
++++ b/src/plugins/tracker/rygel-tracker-category.c
+@@ -28,10 +28,10 @@
+ #include <string.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ #include <dbus/dbus-glib.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_CATEGORY (rygel_tracker_category_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-image-item.c b/src/plugins/tracker/rygel-tracker-image-item.c
+index c38a80b..09c0874 100644
+--- a/src/plugins/tracker/rygel-tracker-image-item.c
++++ b/src/plugins/tracker/rygel-tracker-image-item.c
+@@ -26,7 +26,7 @@
+ #include <rygel.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_ITEM (rygel_tracker_item_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-music-item.c b/src/plugins/tracker/rygel-tracker-music-item.c
+index 6c37464..0166606 100644
+--- a/src/plugins/tracker/rygel-tracker-music-item.c
++++ b/src/plugins/tracker/rygel-tracker-music-item.c
+@@ -26,7 +26,7 @@
+ #include <rygel.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_ITEM (rygel_tracker_item_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-root-container.c b/src/plugins/tracker/rygel-tracker-root-container.c
+index 7c0d649..e2f7024 100644
+--- a/src/plugins/tracker/rygel-tracker-root-container.c
++++ b/src/plugins/tracker/rygel-tracker-root-container.c
+@@ -25,14 +25,14 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/list.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_ROOT_CONTAINER (rygel_tracker_root_container_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-search-result.c b/src/plugins/tracker/rygel-tracker-search-result.c
+index 61869e6..508f335 100644
+--- a/src/plugins/tracker/rygel-tracker-search-result.c
++++ b/src/plugins/tracker/rygel-tracker-search-result.c
+@@ -23,11 +23,11 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <rygel.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <gio/gio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_SEARCH_RESULT (rygel_tracker_search_result_get_type ())
+diff --git a/src/plugins/tracker/rygel-tracker-video-item.c b/src/plugins/tracker/rygel-tracker-video-item.c
+index d600d2d..bd96a82 100644
+--- a/src/plugins/tracker/rygel-tracker-video-item.c
++++ b/src/plugins/tracker/rygel-tracker-video-item.c
+@@ -26,7 +26,7 @@
+ #include <rygel.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRACKER_ITEM (rygel_tracker_item_get_type ())
+diff --git a/src/rygel/rygel-browse.c b/src/rygel/rygel-browse.c
+index 6660b27..51fc9c8 100644
+--- a/src/rygel/rygel-browse.c
++++ b/src/rygel/rygel-browse.c
+@@ -29,8 +29,8 @@
+ #include <string.h>
+ #include <libgupnp/gupnp.h>
+ #include <libgupnp-av/gupnp-av.h>
+-#include <gee/list.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_STATE_MACHINE (rygel_state_machine_get_type ())
+diff --git a/src/rygel/rygel-configuration.c b/src/rygel/rygel-configuration.c
+index c5b6e92..09b5db8 100644
+--- a/src/rygel/rygel-configuration.c
++++ b/src/rygel/rygel-configuration.c
+@@ -27,11 +27,11 @@
+ #include <gconf/gconf-client.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <gconf/gconf.h>
+-#include <gee/collection.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_CONFIGURATION (rygel_configuration_get_type ())
+diff --git a/src/rygel/rygel-content-directory.c b/src/rygel/rygel-content-directory.c
+index b9860c4..56481a8 100644
+--- a/src/rygel/rygel-content-directory.c
++++ b/src/rygel/rygel-content-directory.c
+@@ -28,11 +28,11 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gio/gio.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_CONTENT_DIRECTORY (rygel_content_directory_get_type ())
+diff --git a/src/rygel/rygel-didl-lite-writer.c b/src/rygel/rygel-didl-lite-writer.c
+index e0942ae..3a3c0d0 100644
+--- a/src/rygel/rygel-didl-lite-writer.c
++++ b/src/rygel/rygel-didl-lite-writer.c
+@@ -27,12 +27,12 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gst/gst.h>
+-#include <gee/arraylist.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gio/gio.h>
+-#include <gee/list.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_DIDL_LITE_WRITER (rygel_didl_lite_writer_get_type ())
+diff --git a/src/rygel/rygel-http-request.c b/src/rygel/rygel-http-request.c
+index 41f205d..f9e49f4 100644
+--- a/src/rygel/rygel-http-request.c
++++ b/src/rygel/rygel-http-request.c
+@@ -29,11 +29,11 @@
+ #include <gio/gio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp-av/gupnp-av.h>
+ #include <gst/gst.h>
+-#include <gee/collection.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_STATE_MACHINE (rygel_state_machine_get_type ())
+diff --git a/src/rygel/rygel-http-server.c b/src/rygel/rygel-http-server.c
+index 542889b..82bf937 100644
+--- a/src/rygel/rygel-http-server.c
++++ b/src/rygel/rygel-http-server.c
+@@ -25,15 +25,15 @@
+ #include <glib-object.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp-av/gupnp-av.h>
+ #include <gio/gio.h>
+ #include <libgupnp/gupnp.h>
+ #include <libsoup/soup.h>
+-#include <gee/list.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_TRANSCODE_MANAGER (rygel_transcode_manager_get_type ())
+diff --git a/src/rygel/rygel-main.c b/src/rygel/rygel-main.c
+index bc8df97..5cbc08f 100644
+--- a/src/rygel/rygel-main.c
++++ b/src/rygel/rygel-main.c
+@@ -23,15 +23,15 @@
+ 
+ #include <glib.h>
+ #include <glib-object.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp/gupnp.h>
+ #include <glib/gi18n-lib.h>
+ #include <cstuff.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gst/gst.h>
+ 
+ 
+diff --git a/src/rygel/rygel-media-container.c b/src/rygel/rygel-media-container.c
+index 179c5c7..5cc432d 100644
+--- a/src/rygel/rygel-media-container.c
++++ b/src/rygel/rygel-media-container.c
+@@ -25,7 +25,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gio/gio.h>
+-#include <gee/list.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIA_OBJECT (rygel_media_object_get_type ())
+diff --git a/src/rygel/rygel-media-item.c b/src/rygel/rygel-media-item.c
+index 22413f9..124aaba 100644
+--- a/src/rygel/rygel-media-item.c
++++ b/src/rygel/rygel-media-item.c
+@@ -25,7 +25,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gst/gst.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp-av/gupnp-av.h>
+ 
+ 
+diff --git a/src/rygel/rygel-media-server-factory.c b/src/rygel/rygel-media-server-factory.c
+index ad312fe..f2219d9 100644
+--- a/src/rygel/rygel-media-server-factory.c
++++ b/src/rygel/rygel-media-server-factory.c
+@@ -27,13 +27,13 @@
+ #include <libgupnp/gupnp.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libxml/tree.h>
+ #include <libxml/parser.h>
+ #include <cstuff.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ #include <stdio.h>
+ #include <gio/gio.h>
+ #include <gobject/gvaluecollector.h>
+diff --git a/src/rygel/rygel-media-server.c b/src/rygel/rygel-media-server.c
+index e242965..a248a1d 100644
+--- a/src/rygel/rygel-media-server.c
++++ b/src/rygel/rygel-media-server.c
+@@ -24,14 +24,14 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <libgupnp/gupnp.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libxml/tree.h>
+ #include <libxml/parser.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_MEDIA_SERVER (rygel_media_server_get_type ())
+diff --git a/src/rygel/rygel-plugin-loader.c b/src/rygel/rygel-plugin-loader.c
+index 05aef5e..f569077 100644
+--- a/src/rygel/rygel-plugin-loader.c
++++ b/src/rygel/rygel-plugin-loader.c
+@@ -23,15 +23,15 @@
+ 
+ #include <glib.h>
+ #include <glib-object.h>
+-#include <gee/hashmap.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <libgupnp/gupnp.h>
+ #include <gmodule.h>
+ #include <gio/gio.h>
+-#include <gee/map.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_PLUGIN_LOADER (rygel_plugin_loader_get_type ())
+diff --git a/src/rygel/rygel-plugin.c b/src/rygel/rygel-plugin.c
+index 059b1ce..1d08bde 100644
+--- a/src/rygel/rygel-plugin.c
++++ b/src/rygel/rygel-plugin.c
+@@ -26,8 +26,8 @@
+ #include <libgupnp/gupnp.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_PLUGIN (rygel_plugin_get_type ())
+diff --git a/src/rygel/rygel-transcode-manager.c b/src/rygel/rygel-transcode-manager.c
+index e908f27..f0919a2 100644
+--- a/src/rygel/rygel-transcode-manager.c
++++ b/src/rygel/rygel-transcode-manager.c
+@@ -25,12 +25,12 @@
+ #include <glib-object.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp-av/gupnp-av.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ #include <gst/gst.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ #include <libsoup/soup.h>
+ 
+ 
+diff --git a/src/rygel/rygel-transcoder.c b/src/rygel/rygel-transcoder.c
+index 3ffe312..5ddcca6 100644
+--- a/src/rygel/rygel-transcoder.c
++++ b/src/rygel/rygel-transcoder.c
+@@ -27,8 +27,8 @@
+ #include <libgupnp-av/gupnp-av.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gio/gio.h>
+ 
+ 
+diff --git a/src/rygel/rygel.h b/src/rygel/rygel.h
+index 04d755b..45bf895 100644
+--- a/src/rygel/rygel.h
++++ b/src/rygel/rygel.h
+@@ -7,11 +7,11 @@
+ #include <gconf/gconf-client.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <libgupnp/gupnp.h>
+ #include <gio/gio.h>
+-#include <gee/collection.h>
+-#include <gee/list.h>
++#include <gee.h>
++#include <gee.h>
+ #include <gst/gst.h>
+ 
+ G_BEGIN_DECLS
+diff --git a/src/ui/rygel-folder-pref-section.c b/src/ui/rygel-folder-pref-section.c
+index f003a7c..f6ce13d 100644
+--- a/src/ui/rygel-folder-pref-section.c
++++ b/src/ui/rygel-folder-pref-section.c
+@@ -27,10 +27,10 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gtk/gtk.h>
+-#include <gee/arraylist.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
+-#include <gee/collection.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_PREFERENCES_SECTION (rygel_preferences_section_get_type ())
+diff --git a/src/ui/rygel-preferences-dialog.c b/src/ui/rygel-preferences-dialog.c
+index b519074..1013b72 100644
+--- a/src/ui/rygel-preferences-dialog.c
++++ b/src/ui/rygel-preferences-dialog.c
+@@ -24,14 +24,14 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <gtk/gtk.h>
+-#include <gee/arraylist.h>
++#include <gee.h>
+ #include <rygel.h>
+-#include <gee/collection.h>
++#include <gee.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <gdk/gdk.h>
+-#include <gee/iterable.h>
+-#include <gee/iterator.h>
++#include <gee.h>
++#include <gee.h>
+ 
+ 
+ #define RYGEL_TYPE_PREFERENCES_DIALOG (rygel_preferences_dialog_get_type ())
+-- 
+1.6.3.1
+
