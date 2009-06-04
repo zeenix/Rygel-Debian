@@ -21,10 +21,10 @@ Vcs-Browser: http://git.debian.org/?p=collab-maint/rygel.git
 Package: rygel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
+Description: A UPnP/DLNA devices server
  <insert long description, indented with spaces>
 
-Package: rygel-doc
+Package: rygel-1.0-dev
 Architecture: all
-Description: documentation for rygel
+Description: Rygel UPnP/DLNA server development files
  <insert long description, indented with spaces>
