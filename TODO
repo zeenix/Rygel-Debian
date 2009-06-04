@@ -1,0 +1,10 @@
+Please read doc/design.txt for description of each object.
+
+* Implement MediaExtractor
+* Implement MediaDB
+* Replace MediaTracker with MediaDB
+* Create the MediaProvider interface
+* MediaDB implements MediaProvider
+* Implement plugin system in/for MediaDB
+* Revive MediaTracker as a plugin
+* Port MediaTracker code to Xesam.
