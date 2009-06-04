@@ -9,7 +9,7 @@ else
 CROSS= --build $(DEB_BUILD_GNU_TYPE)
 endif
 
-include /usr/share/quilt/quilt.make
+# include /usr/share/quilt/quilt.make
 
 config.status: configure
 	dh_testdir
@@ -21,6 +21,7 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 endif
 	./configure $(CROSS) --prefix=/usr --mandir=\$${prefix}/share/man \
 	--with-gconf-schema-file-dir=/etc/gconf/schemas \
+	--enable-mediathek-plugin \
 	CFLAGS="$(CFLAGS)"
 
 #Architecture
@@ -33,10 +34,9 @@ build-arch-stamp:  config.status $(QUILT_STAMPFN)
 
 build-indep: build-indep-stamp
 build-indep-stamp:  config.status $(QUILT_STAMPFN)
-	#$(MAKE) doc
 	touch $@
 
-clean: unpatch
+clean: #unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp
@@ -50,11 +50,6 @@ install-indep:
 	dh_testroot
 	dh_prep -i
 	dh_installdirs -i
-
-	# Add here commands to install the indep part of the package into
-	# debian/<package>-doc.
-	#INSTALLDOC#
-
 	dh_install -i
 
 install-arch:
@@ -62,8 +57,9 @@ install-arch:
 	dh_testroot
 	dh_prep -s
 	dh_installdirs -s
-	$(MAKE) DESTDIR=$(CURDIR)/debian/rygel install
-	dh_install -s
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+	dh_install -s --list-missing
+	dh_gconf -prygel -Prygel
 
 # Must not depend on anything. This is to be called by
 # binary-arch/binary-indep

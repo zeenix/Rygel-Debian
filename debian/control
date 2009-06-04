@@ -28,3 +28,21 @@ Package: rygel-1.0-dev
 Architecture: all
 Description: Rygel UPnP/DLNA server development files
  <insert long description, indented with spaces>
+
+Package: rygel-dvb
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A UPnP/DLNA devices server
+ <insert long description, indented with spaces>
+
+Package: rygel-mediathek
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A UPnP/DLNA devices server
+ <insert long description, indented with spaces>
+
+Package: rygel-tracker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A UPnP/DLNA devices server
+ <insert long description, indented with spaces>
