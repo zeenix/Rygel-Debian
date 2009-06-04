@@ -1,0 +1,30 @@
+Source: rygel
+Section: net
+Priority: extra
+Maintainer: Marc-Andre Lureau <marcandre.lureau@gmail.com>
+Build-Depends: quilt, debhelper (>= 7), autotools-dev,
+    libgupnp-1.0-dev (>= 0.12.5),
+    libgupnp-av-1.0-dev (>= 0.4),
+    libgconf2-dev (>= 2.16),
+    libdbus-glib-1-dev (>= 0.74),
+    libgstreamer0.10-dev (>= 0.10.22),
+    libglib2.0-dev (>= 2.16.6),
+    libgee-dev (>= 0.1.5),
+    uuid-dev (>= 1.2-1.41.3-1),
+    libsoup2.4-dev (>= 2.26.0),
+    libgtk2.0-dev (>= 2.16)
+Standards-Version: 3.8.1
+Homepage: http://live.gnome.org/Rygel
+Vcs-Git: git://git.debian.org/git/collab-maint/rygel.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/rygel.git
+
+Package: rygel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: rygel-doc
+Architecture: all
+Description: documentation for rygel
+ <insert long description, indented with spaces>

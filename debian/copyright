@@ -1,0 +1,43 @@
+This package was debianized by Marc-Andre Lureau <marcandre.lureau@gmail.com> on
+Thu, 04 Jun 2009 23:22:14 +0300.
+
+It was downloaded from ftp://ftp.gnome.org/pub/GNOME/sources/rygel/
+
+Upstream Author(s):
+
+    Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+    Jorn Baayen <jorn@openedhand.com>
+    Jens Georg <mail@jensge.org>
+
+Copyright:
+
+    Copyright (C) 2008-2009 Nokia Corporation, all rights reserved.
+    Copyright (C) 2006-2008 OpenedHand Ltd.
+    Copyright (C) 2008-2009 Jens Georg <mail@jensge.org>
+    Copyright (C) 2008 Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+License:
+
+    This package is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU Lesser General
+Public License can be found in `/usr/share/common-licenses/LGPL-2'.
+
+The Debian packaging is:
+
+    Copyright (C) 2009 Marc-Andre Lureau <marcandre.lureau@gmail.com>
+
+and is licensed under the GPL version 2,
+see `/usr/share/common-licenses/GPL-2'.

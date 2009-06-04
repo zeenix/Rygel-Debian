@@ -1,0 +1,5 @@
+rygel (0.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Marc-Andre Lureau <marcandre.lureau@gmail.com>  Thu, 04 Jun 2009 23:22:14 +0300
