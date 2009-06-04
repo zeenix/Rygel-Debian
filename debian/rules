@@ -31,7 +31,7 @@ build-arch-stamp:  config.status $(QUILT_STAMPFN)
 
 build-indep: build-indep-stamp
 build-indep-stamp:  config.status $(QUILT_STAMPFN)
-	$(MAKE) doc
+	#$(MAKE) doc
 	touch $@
 
 clean: unpatch
