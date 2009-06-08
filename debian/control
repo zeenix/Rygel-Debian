@@ -21,28 +21,101 @@ Vcs-Browser: http://git.debian.org/?p=collab-maint/rygel.git
 Package: rygel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A UPnP/DLNA devices server
- <insert long description, indented with spaces>
+Description: A collection of UPnP/DLNA services
+ Rygel is a collection of UPnP/DLNA sevices, implemented through a plug-in
+ mechanism. Important facts and features:
+
+  * Specifically designed for GNOME (Mobile).
+  * Based on GUPnP.
+  * Written (mostly) in Vala language.
+  * APIs to ease the implementation of AV devices (currently only MediaServer
+    V 2.0 specification).
+  * Audio and Video Transcoding: source format could be anything GStreamer's
+    decodebin2 can handle but output formats are currently limited to: mp3,
+    PCM and MPEG TS. Fortunately the transcoding framework is flexible enough
+    to easily add more transcoding targets.
+
+ This package contains the core of Rygel and following plugins:
+  * Folder: A MediaServer plugin that recursively exports folders specified in
+    the user preferences.
+  * External: A MediaServer plugin that exports media hierarchies provided by
+    external applications.
 
 Package: rygel-1.0-dev
 Architecture: all
-Description: Rygel UPnP/DLNA server development files
- <insert long description, indented with spaces>
+Description: Rygel development files
+ Rygel is a collection of UPnP/DLNA services, implemented through a plug-in
+ mechanism. Important facts and features:
+
+  * Specifically designed for GNOME (Mobile).
+  * Based on GUPnP.
+  * Written (mostly) in Vala language.
+  * APIs to ease the implementation of AV devices (currently only MediaServer
+    V 2.0 specification).
+  * Audio and Video Transcoding: source format could be anything GStreamer's
+    decodebin2 can handle but output formats are currently limited to: mp3,
+    PCM and MPEG TS. Fortunately the transcoding framework is flexible enough
+    to easily add more transcoding targets.
+
+ This package privdes the files needed to build Rygel plugins.
 
 Package: rygel-dvb
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A UPnP/DLNA devices server
- <insert long description, indented with spaces>
+Description: DVB plugin for Rygel
+ Rygel is a collection of UPnP/DLNA services, implemented through a plug-in
+ mechanism. Important facts and features:
+
+  * Specifically designed for GNOME (Mobile).
+  * Based on GUPnP.
+  * Written (mostly) in Vala language.
+  * APIs to ease the implementation of AV devices (currently only MediaServer
+    V 2.0 specification).
+  * Audio and Video Transcoding: source format could be anything GStreamer's
+    decodebin2 can handle but output formats are currently limited to: mp3,
+    PCM and MPEG TS. Fortunately the transcoding framework is flexible enough
+    to easily add more transcoding targets.
+
+ This package provides a MediaServer plugin that exports live TV channels over
+ the UPnP network from DVB Daemon (http://live.gnome.org/DVBDaemon).
 
 Package: rygel-mediathek
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A UPnP/DLNA devices server
- <insert long description, indented with spaces>
+Description: Mediathek plugin for Rygel
+ Rygel is a collection of UPnP/DLNA services, implemented through a plug-in
+ mechanism. Important facts and features:
+
+  * Specifically designed for GNOME (Mobile).
+  * Based on GUPnP.
+  * Written (mostly) in Vala language.
+  * APIs to ease the implementation of AV devices (currently only MediaServer
+    V 2.0 specification).
+  * Audio and Video Transcoding: source format could be anything GStreamer's
+    decodebin2 can handle but output formats are currently limited to: mp3,
+    PCM and MPEG TS. Fortunately the transcoding framework is flexible enough
+    to easily add more transcoding targets.
+
+ This package provides a MediaServer plugin that exports TV programs from the
+ 2nd German TV station online service (http://www.zdf.de/) over the UPnP
+ network.
 
 Package: rygel-tracker
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A UPnP/DLNA devices server
- <insert long description, indented with spaces>
+Description: Tracker plugin for Rygel
+ Rygel is a collection of UPnP/DLNA services, implemented through a plug-in
+ mechanism. Important facts and features:
+
+  * Specifically designed for GNOME (Mobile).
+  * Based on GUPnP.
+  * Written (mostly) in Vala language.
+  * APIs to ease the implementation of AV devices (currently only MediaServer
+    V 2.0 specification).
+  * Audio and Video Transcoding: source format could be anything GStreamer's
+    decodebin2 can handle but output formats are currently limited to: mp3,
+    PCM and MPEG TS. Fortunately the transcoding framework is flexible enough
+    to easily add more transcoding targets.
+
+ This package provides a MediaServer plugin that exports user's media contents
+ known to Tracker (http://www.gnome.org/projects/tracker).
