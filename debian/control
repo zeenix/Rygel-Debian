@@ -21,7 +21,7 @@ Vcs-Browser: http://git.debian.org/?p=collab-maint/rygel.git
 Package: rygel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A collection of UPnP/DLNA services
+Description: GNOME UPnP/DLNA services
  Rygel is a collection of UPnP/DLNA sevices, implemented through a plug-in
  mechanism. Important facts and features:
 
